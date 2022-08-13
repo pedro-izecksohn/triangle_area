@@ -12,17 +12,12 @@ class Point:
     yds = yd*yd
     return sqrt (xds+yds)
 
-class Triangle:
-  def __init__ (self, a, b, c):
-    self.a = a
-    self.b = b
-    self.c = c
-  def area (self):
-    sidea = self.a.distance(self.b)
-    sideb = self.b.distance (self.c)
-    sidec = self.c.distance (self.a)
-    s = (sidea+sideb+sidec)/2
-    return sqrt(s*(s-sidea)*(s-sideb)*(s-sidec))
+def triangleArea (a ,b ,c):
+  sidea = a.distance (b)
+  sideb = b.distance (c)
+  sidec = c.distance (a)
+  s = (sidea+sideb+sidec)/2
+  return sqrt(s*(s-sidea)*(s-sideb)*(s-sidec))
 
 print ("Area of triangle\nBy: Pedro Izecksohn on August 13 of 2022")
 ax = float (input ("Enter A.x: "))
@@ -34,5 +29,4 @@ b = Point (bx, by)
 cx = float (input ("Enter C.x: "))
 cy = float (input ("Enter C.y: "))
 c = Point (cx, cy)
-t = Triangle (a, b, c)
-print (t.area())
+print (triangleArea (a, b, c))
